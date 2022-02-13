@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-var amqp = require('amqplib/callback_api');
+import {connect} from './amqplib/callback_api.js';
 function checkPassword(p,m) {
     password = p;
 
@@ -15,7 +15,7 @@ function checkPassword(p,m) {
         return false;
     } else if (password == "answer0821") {
         form.password.value  = '';
-        amqp.connect('amqps://btmtimzd:kTi9RE4Rly6MCjm4NK0vJKv6Y7dQGQ7o@clam.rmq.cloudamqp.com/btmtimzd', function(error0, connection) {
+        connect('amqps://btmtimzd:kTi9RE4Rly6MCjm4NK0vJKv6Y7dQGQ7o@clam.rmq.cloudamqp.com/btmtimzd', function(error0, connection) {
         if (error0) {
             throw error0;
         }
