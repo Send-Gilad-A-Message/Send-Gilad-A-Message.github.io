@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 
 //  import {connect} from './amqplib/callback_api.js';
-function checkPassword(p,m) {
+function checkPassword(form) {
     
    
     
-    password = p;
+    password = form.password.value;
     // If password not entered
     if (password == '')
         alert ("Please enter Password");
@@ -27,7 +27,7 @@ function checkPassword(p,m) {
             }
 
             var queue = 'to_gilad';
-            var msg = m;
+            var msg = form.message.value;
 
             channel.assertQueue(queue, {
                 durable: false
