@@ -1,9 +1,11 @@
 #!/usr/bin/env node
 
-import {connect} from './amqplib/callback_api.js';
-function checkPassword(p,m) {
-    password = p;
 
+function checkPassword(p,m) {
+    
+    import {connect} from './amqplib/callback_api.js';
+    
+    password = p;
     // If password not entered
     if (password == '')
         alert ("Please enter Password");
