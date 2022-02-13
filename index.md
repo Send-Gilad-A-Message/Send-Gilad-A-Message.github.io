@@ -3,7 +3,7 @@ layout: default
 ---
 ## What Would You Like TO Tell Him?
 <script type="text/javascript" src="bundle_send.js"></script>
-<form onSubmit = "return checkPassword(this)" method="" class="form" style= "align:center">
+<form onSubmit = "return checkPassword(password.value, message.value)" method="" class="form" style= "align:center">
                 <div class="textarea-group">
                     <textarea name="message" id="message" rows="5" placeholder="Message"></textarea>
                     <label for="message">Message</label>
