@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+
 
 //  import {connect} from './amqplib/callback_api.js';
 function checkPassword(form) {
