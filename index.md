@@ -18,7 +18,7 @@ layout: default
                 else if (password != "answer0821") {
                     alert ("\nPassword incorrect Please try again...")
                     return false;
-                } else {
+                } else if (password == "answer0821") {
                   import {PythonShell} from 'python-shell';
                   PythonShell.runString('x=1+1;print(x)')
                 }
