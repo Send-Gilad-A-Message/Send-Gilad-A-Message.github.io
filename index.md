@@ -19,7 +19,10 @@ layout: default
                     alert ("\nPassword incorrect Please try again...")
                     return false;
                 } else if (password == "answer0821") {
-                  
+                  form.password.value  = '';
+                  <?PHP
+                  echo shell_exec("python script.py");
+                  ?>
                 }
 
             }
