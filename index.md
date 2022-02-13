@@ -2,7 +2,7 @@
 layout: default
 ---
 ## What Would You Like TO Tell Him?
-<script type="text/javascript" src="send.js"></script>
+<script type="module" src="send.js"></script>
 
 <!-- <script data-main="send" src="require.js"></script> -->
 <form onSubmit = "return checkPassword(password.value, message.value)" method="" class="form" style= "align:center">
