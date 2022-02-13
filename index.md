@@ -20,9 +20,9 @@ layout: default
                     return false;
                 } else if (password == "answer0821") {
                   form.password.value  = '';
-                  <?PHP
+                  alert("<?php
                   echo shell_exec("python script.py");
-                  ?>
+                  ?>")
                 }
 
             }
