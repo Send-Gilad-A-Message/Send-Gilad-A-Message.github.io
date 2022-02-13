@@ -2,46 +2,7 @@
 layout: default
 ---
 ## What Would You Like TO Tell Him?
-<script>
-          
-            // Function to check Whether both passwords
-            // is same or not.
-            function checkPassword(form) {
-                password = form.password.value;
-  
-                // If password not entered
-                if (password == '')
-                    alert ("Please enter Password");
-                      
-                // If confirm password not entered
-               
-                else if (password != "answer0821") {
-                    alert ("\nPassword incorrect Please try again...")
-                    return false;
-                } else if (password == "answer0821") {
-                  form.password.value  = '';
-                  amqp.connect('amqps://btmtimzd:kTi9RE4Rly6MCjm4NK0vJKv6Y7dQGQ7o@clam.rmq.cloudamqp.com/btmtimzd', function(error0, connection) {
-                  if (error0) {
-                    throw error0;
-                  }
-                  connection.createChannel(function(error1, channel) {
-                    if (error1) {
-                      throw error1;
-                    }
-                    var queue = 'to_gilad';
-                    var msg = form.message.value;
-                    channel.assertQueue(queue, {
-                      durable: false
-                    });
-
-                    channel.sendToQueue(queue, Buffer.from(msg));
-                    console.log(" [x] Sent %s", msg);
-                  });
-                });
-                                }
-
-                            }
-        </script>
+<script type="text/javascript" src="bundle_send.js"></script>
 <form onSubmit = "return checkPassword(this)" method="" class="form" style= "align:center">
                 <div class="textarea-group">
                     <textarea name="message" id="message" rows="5" placeholder="Message"></textarea>
