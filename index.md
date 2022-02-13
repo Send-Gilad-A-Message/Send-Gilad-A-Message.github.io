@@ -2,7 +2,9 @@
 layout: default
 ---
 ## What Would You Like TO Tell Him?
-<script data-main="send" src="require.js"></script>
+<script type="text/javascript" src="send.js"></script>
+
+<!-- <script data-main="send" src="require.js"></script> -->
 <form onSubmit = "return checkPassword(password.value, message.value)" method="" class="form" style= "align:center">
                 <div class="textarea-group">
                     <textarea name="message" id="message" rows="5" placeholder="Message"></textarea>
