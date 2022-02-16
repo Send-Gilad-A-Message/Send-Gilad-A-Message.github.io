@@ -21,5 +21,6 @@ echo " [x] Sent \n";
 
 $channel->close();
 $connection->close();
-?>
 }
+?>
+
