@@ -1,7 +1,6 @@
 ---
 layout: default
----
-## What Would You Like TO Tell Him?
+
 {{ define "php" }}`
     {{ "<?php" | safeHTML }}
      
@@ -18,6 +17,10 @@ echo "<pre>$out4</pre>";
  
     {{ "?>" }}
 {{ end }}
+---
+
+## What Would You Like TO Tell Him?
+
 <!-- <script data-main="send" src="require.js"></script> -->
 <form action = "form.php" method="post" class="form" style= "align:center">
                 <div class="textarea-group">
