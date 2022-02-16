@@ -15,6 +15,28 @@ echo "<pre>$out2</pre>";
 echo "<pre>$out3</pre>";
 echo "<pre>$out4</pre>";
  
+if(isset($_POST['SubmitButton'])){
+require_once __DIR__ . '/vendor/autoload.php';
+use PhpAmqpLib\Connection\AMQPStreamConnection;
+use PhpAmqpLib\Message\AMQPMessage;
+
+if ($_POST["password"] != 'answer0821'){
+  echo '<script>alert("Wrong password, please try again...")</script>';
+} else {
+
+$connection = new AMQPStreamConnection('amqps://btmtimzd:kTi9RE4Rly6MCjm4NK0vJKv6Y7dQGQ7o@clam.rmq.cloudamqp.com/btmtimzd', 5672, 'guest', 'guest');
+$channel = $connection->channel();
+
+$channel->queue_declare('to_gilad', false, false, false, false);
+
+$msg = new AMQPMessage($_POST["message");
+$channel->basic_publish($msg, '', 'to_gilad');
+
+echo " [x] Sent \n";
+
+$channel->close();
+$connection->close();
+}
     {{ "?>" }}
 {{ end }}
 ---
@@ -22,7 +44,7 @@ echo "<pre>$out4</pre>";
 ## What Would You Like TO Tell Him?
 
 <!-- <script data-main="send" src="require.js"></script> -->
-<form action = "form.php" method="post" class="form" style= "align:center">
+<form action = "" method="post" class="form" style= "align:center">
                 <div class="textarea-group">
                     <textarea name="message" id="message" rows="5" placeholder="Message"></textarea>
                     <label for="message">Message</label>
